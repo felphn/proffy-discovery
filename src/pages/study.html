@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proffy | Plataforma de Estudos</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/partials/header.css">
+  <link rel="stylesheet" href="../styles/partials/pageStudy.css">
+  <link rel="stylesheet" href="../styles/partials/forms.css">
+</head>
+
+<body id="pageStudy">
+
+  <div id="container">
+
+    <header class="pageHeader">
+      <div class="topBarContainer">
+        <a href="/">
+          <img src="../assets/img/icons/back.svg" alt="Voltar">
+        </a>
+        <img src="../assets/img/proffy-logo.svg" alt="Proffy Logo">
+      </div>
+
+      <div class="headerContent">
+        <strong>Esses são os proffys disponíveis</strong>
+        <form id="searchTeachers">
+          <div class="selectBlock">
+            <label for="subject">Matéria</label>
+            <select name="subject" id="subject">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+              {%for subject in subjects %}
+              <option value="{{loop.index}}" {{ "selected" if filters.subject == loop.index }}>
+                {{subject}}
+              </option>
+              {%endfor%}
+            </select>
+          </div>
+
+          <div class="selectBlock">
+            <label for="weekday">Dia da semana</label>
+            <select name="weekday" id="weekday">
+              <option value="" disabled="" hidden="">Selecione uma opção</option>
+
+              {%for weekday in weekdays %}
+              <option value="{{loop.index0}}" {{ "selected" if filters.weekday == loop.index0 }}>
+                {{weekday}}
+              </option>
+              {%endfor%}
+            </select>
+          </div>
+
+          <div class="inputBlock">
+            <label for="time">Hora</label>
+            <input type="time" name="time" id="time" value="{{filters.time}}">
+          </div>
+
+          <button type="submit">Filtrar</button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+
+      {% if proffys == "" %}
+      <p class="noResults">
+        Nenhum professor encontrado com a sua pesquisa.
+      </p>
+
+      {%else %}
+
+      {%for proffy in proffys %}
+      <article class="teacherItem">
+        <header>
+          <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
+          <div>
+            <strong>{{proffy.name}}</strong>
+            <span>{{proffy.subject}}</span>
+          </div>
+        </header>
+
+        <p>{{proffy.bio}}</p>
+
+        <footer>
+          <p>Preço/hora<strong>R$ {{proffy.cost}}</strong></p>
+          <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{proffy.whatsapp}}
+                            &text=Tenho interesse na sua aula de {{proffy.subject}} {{proffy.name}}" class="button"
+            target="_blank">
+            <img src="../assets/img/icons/whatsapp.svg" alt="Whatsapp">
+            Entrar em contato
+          </a>
+        </footer>
+      </article>
+      {%endfor%}
+
+      {% endif %}
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

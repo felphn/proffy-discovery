@@ -1,0 +1,132 @@
+#pageLanding {
+    background-color: var(--color-primary);
+}
+
+#pageLanding #container {
+    color: var(--color-text-in-primary);
+}
+
+.logoContainer img {
+    height: 10rem;
+}
+
+.logoContainer {
+    text-align: center;
+    margin-bottom: 3.2rem; /* margem/dist inferior */
+}
+
+.logoContainer h2 {
+    font-weight: 500; 
+    font-size: 3.2rem;
+    line-height: 4.6rem; /* altura da linha do h2 */
+    margin-top: 0.8rem; /* margem/dist do h2 do texto superior, no caso, o logo */
+}
+
+/* 100% em cima do valor herdado do father, no caso, "container" */
+.heroImage {
+    width: 100%;
+}
+
+.buttonContainer {
+    display: flex; /* display funciona em conjunto com justify e/ou align */
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttonContainer a {
+    width: 30rem;
+    height: 10.4rem;
+    border-radius: 0.8rem; /* arredondamento das bordas do button */
+    margin-right: 1.6rem; /* sep entre os buttons */
+    font: 700 2.4rem Archivo; /* weight-size-family */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* none: rm underline da tag a */
+    color: var(--color-button-text);
+    transition: background 0.3s; /* transition hover effect */
+}
+
+.buttonContainer a img {
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+.buttonContainer a.study {
+    background-color: var(--color-primary-lighter);
+}
+
+/* hover -> mouse over animation */
+.buttonContainer a.study:hover { 
+    background-color: var(--color-primary-light);
+}
+
+.buttonContainer a.giveClasses {
+    background-color: var(--color-secondary);
+    margin-right: 0; /* rm margin/dist entre a direita do segundo button */
+}
+
+.buttonContainer a.giveClasses:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.totalConnections {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalConnections img {
+    margin-left: 0.8rem;
+}
+
+/* media query -> aplica um css adaptado se a regra definida for observada */
+/* até 699px aplica a regra abaixo, se for 700px aplica a regra que está no main */
+@media (max-width: 699px) {
+    :root {
+        font-size: 38%;
+    }
+}
+
+@media (min-width: 1100px) {
+    #pageLanding #container {
+        max-width: 1100px;
+        display: grid; /* divide o display do conteúdo em grades */
+        grid-template-columns: 2fr 1fr 2fr; /* tam de cada grade de coluna */
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:
+        "proffy img img"
+        "button button texting";
+        column-gap: 87px;
+        row-gap: 86px; 
+    }
+
+    .logoContainer {
+        grid-area: proffy;
+        text-align: initial; /* reset align */
+        align-self: center;
+        margin: 0; /* rm margin def anteriormente */
+    }
+
+    .logoContainer img {
+        height: 127px;
+    }
+
+    .heroImage {
+        grid-area: img;
+        height: 350px;
+    }
+
+    .buttonContainer {
+        grid-area: button;
+        justify-content: flex-start; /* sobrescreve o display center definido anteriormente */
+        margin: 0;
+    }
+
+    .totalConnections {
+        grid-area: texting;
+        justify-self: end; /* justifica o conteúdo, no caso, ao fim do grid */
+        font-size: 1.4rem;
+    }
+}

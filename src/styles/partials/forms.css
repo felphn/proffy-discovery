@@ -1,0 +1,47 @@
+
+.selectBlock label,
+.inputBlock label,
+.textAreaBlock label {
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+.inputBlock input,
+.selectBlock select,
+.textAreaBlock textarea {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background-color: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0; /* rm cor ao selecionar o bloco */
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+.textAreaBlock textarea {
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+    resize: vertical; /* only vertical resize */
+}
+
+/* relative position para que o after fique dentro do contexto do input block */
+.inputBlock,
+.textAreaBlock {
+    position: relative;
+}
+
+/* foca o elemento selecionado */
+/* after -> elemento de html dinâmico criado quando um input estiver em foco */ 
+.inputBlock:focus-within::after,
+.textAreaBlock:focus-within::after { 
+    content: "";
+    width: calc(100% - 3.2rem); /* calculo de largura do elemento after */
+    height: 2px;
+    background-color: var(--color-primary-light);
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+}

@@ -1,0 +1,71 @@
+.pageHeader {
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.pageHeader .topBarContainer {
+    width: 90%;
+    margin: 0 auto; /* espaço top-bottom=0 e left-right=auto */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* espaçamento entre as "flechas" */
+    padding: 1.6rem 0; /* padding top-bottom=1.6rem e left-right=0 */
+}
+
+.pageHeader .topBarContainer a {
+    height: 3.2rem;
+    transition: opacity 0.3s;
+}
+
+.pageHeader .topBarContainer a:hover {
+    opacity: 0.6;
+}
+
+.pageHeader .topBarContainer > img {
+    height: 1.6rem;
+}
+
+.pageHeader .headerContent {
+    width: 90%;
+    margin: 3.2rem auto;
+    position: relative; /* input columns grid display for web dev */
+}                       /* @media -> #searchTeachers */
+
+.pageHeader .headerContent strong {
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+    color: var(--color-title-in-primary);
+}
+
+.pageHeader .headerContent p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 2.4rem;
+}
+
+@media (min-width: 700px) {
+    .pageHeader {
+        height: 340px;
+    }
+
+    .pageHeader .topBarContainer {
+        max-width: 1100px;
+    }
+
+    .pageHeader .headerContent {
+        max-width: 740px;
+        margin: 0 auto;
+        flex: 1 1; /* estica o contéudo */
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pageHeader .headerContent strong {
+        max-width: 350px;
+    }
+}
