@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/felpshn/proffy-discovery/blob/master/.github/proffy-banner.png">
+  <img src="https://github.com/felpshn/proffy-nlw-discovery/blob/master/.github/proffy-banner.png">
 </p>
 
 ## :scroll: About
@@ -19,20 +19,20 @@ Projeto de desenvolvimento da interface web e mobile de uma plataforma de estudo
 ## :tv: Preview
 
 <p align="center">
-  <img width="585" height="335" src="https://github.com/felpshn/proffy-discovery/blob/master/.github/prev-landpage.png">
+  <img width="585" height="335" src="https://github.com/felpshn/proffy-nlw-discovery/blob/master/.github/prev-landpage.png">
 </p>
 
 <p align="center">
-  <img width="292" height="271" src="https://github.com/felpshn/proffy-discovery/blob/master/.github/prev-study.png">
-    <img width="292" height="271" src="https://github.com/felpshn/proffy-discovery/blob/master/.github/prev-gvclasses.png">
+  <img width="292" height="271" src="https://github.com/felpshn/proffy-nlw-discovery/blob/master/.github/prev-study.png">
+    <img width="292" height="271" src="https://github.com/felpshn/proffy-nlw-discovery/blob/master/.github/prev-gvclasses.png">
 </p>
 
 ## :question: How to use
 
 ```elm
-git clone https://github.com/felpshn/proffy-discovery.git
+git clone https://github.com/felpshn/proffy-nlw-discovery.git
 
-cd proffy-discovery
+cd proffy-nlw-discovery
 npm install
 
 npm run dev
@@ -41,5 +41,5 @@ npm run dev
 ## :boom: Discovery
 
 <p align="center">
-  <img src="https://github.com/felpshn/proffy-discovery/blob/master/.github/nlw-discovery-banner.png">
+  <img src="https://github.com/felpshn/proffy-nlw-discovery/blob/master/.github/nlw-discovery-banner.png">
 </p>
